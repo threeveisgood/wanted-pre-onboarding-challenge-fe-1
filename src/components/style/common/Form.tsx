@@ -1,5 +1,11 @@
 import styled, { css } from "styled-components";
 
+export const FormSection = styled.section`
+  margin-top: 6rem;
+  padding: 10rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+`;
+
 export const FormTitle = styled.h1`
   padding-bottom: 1.7rem;
 `;
@@ -34,7 +40,7 @@ export const FieldContainer = styled.div`
 `;
 
 export const InputStyle = css`
-  width: 30rem;
+  width: 38rem;
   border: 0;
   border-bottom: 1px solid ${(props) => props.theme.black};
   border-image-slice: 1;

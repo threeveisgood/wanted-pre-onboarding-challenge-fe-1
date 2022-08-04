@@ -44,9 +44,9 @@ export const Links = styled.div`
   display: flex;
   align-items: center;
 
-  ${({ theme }) => theme.media.tabPort} {
+  /* ${({ theme }) => theme.media.tabPort} {
     display: none;
-  }
+  } */
 `;
 
 export const LinksOl = styled.ol`

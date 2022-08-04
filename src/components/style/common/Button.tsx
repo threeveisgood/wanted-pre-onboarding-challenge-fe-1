@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const ButtonContainer = styled.div`
-  margin-top: 3.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 4.5rem;
 `;
 
 export const Button = styled.button`

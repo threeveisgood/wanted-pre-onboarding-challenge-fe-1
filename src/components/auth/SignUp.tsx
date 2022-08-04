@@ -9,6 +9,7 @@ import {
   FormErrorMessage,
   StyledInput,
   StyledLabel,
+  FormSection,
 } from "../style/common/Form";
 
 interface ISignUpProps {}
@@ -37,7 +38,7 @@ const SignUp: React.FunctionComponent<ISignUpProps> = (props) => {
 
   return (
     <>
-      <section>
+      <FormSection>
         <FormTitle>{isLogin ? "로그인" : "회원가입"}</FormTitle>
         <form onSubmit={formik.handleSubmit}>
           <Field>
@@ -78,7 +79,7 @@ const SignUp: React.FunctionComponent<ISignUpProps> = (props) => {
           </ButtonContainer>
           <FormErrorMessage>{errorMessage}</FormErrorMessage>
         </form>
-      </section>
+      </FormSection>
     </>
   );
 };
