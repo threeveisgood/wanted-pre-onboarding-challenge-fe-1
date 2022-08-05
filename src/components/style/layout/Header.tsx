@@ -43,10 +43,6 @@ export const StyledLink = styled(Link)`
 export const Links = styled.div`
   display: flex;
   align-items: center;
-
-  /* ${({ theme }) => theme.media.tabPort} {
-    display: none;
-  } */
 `;
 
 export const LinksOl = styled.ol`
@@ -61,11 +57,16 @@ export const LinksOl = styled.ol`
 export const LinksLi = styled.li`
   margin: 0 0.5rem;
   position: relative;
-  font-size: ${({ theme }) => theme.fontSize.sm};
+  font-size: ${({ theme }) => theme.fontSize.md};
 
   color: ${({ theme }) => theme.black};
 `;
 
 export const LinksA = styled(StyledLink)`
   padding: 1rem;
+`;
+
+export const LinksLogout = styled.div`
+  cursor: pointer;
+  color: ${({ theme }) => theme.white};
 `;

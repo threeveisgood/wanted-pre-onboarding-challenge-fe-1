@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const FormSection = styled.section`
   margin-top: 6rem;
   padding: 10rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
 `;
 
 export const FormTitle = styled.h1`
