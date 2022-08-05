@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-export const signUpValidationSchema = yup.object({
+export const registerValidationSchema = yup.object({
   email: yup
     .string()
     .email("이메일 형식으로 입력해주세요.")

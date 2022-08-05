@@ -45,27 +45,12 @@ const GlobalStyle = createGlobalStyle`
 
     h1, h2, h3, h4, h5, h6 {
         margin: 0 0 1rem;
-        font-weight: 600;        
+        font-weight: bold;        
         line-height: 1.1;
     }
 
     p {
         margin: 0 0 1.1rem;
-    }
-
-    .big-heading {
-        margin: 0;
-        font-size: clamp(4rem, 8vw, 8rem);
-    }
-
-    .heading {
-        display: flex;
-        align-items: center;
-        position: relative;
-        margin: 1rem 0 4rem;
-        width: 100%;
-        font-size: clamp(2.6rem,5vw,${({ theme }) => theme.heading});
-        white-space: nowrap;
     }
 `;
 

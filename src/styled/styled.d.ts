@@ -14,10 +14,6 @@ declare module "styled-components" {
     slate: string;
     transition: {
       normal: string;
-      hamBefore: string;
-      hamBeforeActive: string;
-      hamAfter: string;
-      hamAfterActive: string;
     };
     fontSize: {
       xs: string;

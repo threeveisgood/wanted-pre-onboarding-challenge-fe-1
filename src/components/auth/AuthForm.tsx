@@ -1,6 +1,8 @@
 import { useFormik } from "formik";
 import { useState } from "react";
-import { signUpValidationSchema } from "../../lib/yup";
+import useLogin from "../../hooks/useLogIn";
+import useRegister from "../../hooks/useRegister";
+import { registerValidationSchema } from "../../lib/yup";
 import { Button, ButtonContainer } from "../style/common/Button";
 import {
   Field,
@@ -12,11 +14,16 @@ import {
   FormSection,
 } from "../style/common/Form";
 
-interface ISignUpProps {}
+interface IAuthFormProps {}
 
-const SignUp: React.FunctionComponent<ISignUpProps> = (props) => {
-  const [errorMessage, setErrorMessage] = useState("");
-  const [isLogin, setIsLogin] = useState(true);
+const AuthForm: React.FunctionComponent<IAuthFormProps> = () => {
+  const [errorMessage, setErrorMessage] = useState<string | null>("");
+  const [isLogin, setIsLogin] = useState<boolean | null>(true);
+
+  const { mutate: login, isLoading: loginLoading } = useLogin();
+  const { mutate: regiseter, isLoading: registerLoading } = useRegister();
+
+  const isLoading = loginLoading || registerLoading;
 
   function switchAuthModeHandler() {
     setIsLogin((prevState) => !prevState);
@@ -27,12 +34,26 @@ const SignUp: React.FunctionComponent<ISignUpProps> = (props) => {
       email: "",
       password: "",
     },
-    validationSchema: signUpValidationSchema,
+    validationSchema: registerValidationSchema,
     onSubmit: async (values, { setSubmitting }) => {
-      const enteredEmail = values.email;
-      const enteredPassword = values.password;
+      const enteredEmail: string = values.email;
+      const enteredPassword: string = values.password;
 
-      setSubmitting(false);
+      if (isLoading) {
+        return;
+      }
+
+      if (isLogin) {
+        login({
+          email: enteredEmail,
+          password: enteredPassword,
+        });
+      } else {
+        regiseter({
+          email: enteredEmail,
+          password: enteredPassword,
+        });
+      }
     },
   });
 
@@ -84,4 +105,4 @@ const SignUp: React.FunctionComponent<ISignUpProps> = (props) => {
   );
 };
 
-export default SignUp;
+export default AuthForm;
