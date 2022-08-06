@@ -17,6 +17,7 @@ export default function useRegister() {
     },
     onError: (error: AuthError) => {
       console.log(error);
+      console.log(error.response?.data);
     },
   });
   return mutation;

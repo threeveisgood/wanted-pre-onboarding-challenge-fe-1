@@ -29,4 +29,5 @@ export const theme: DefaultTheme = {
   },
   borderRadius: "0.4rem",
   heading: "3.2rem",
+  todosLength: "70rem",
 };

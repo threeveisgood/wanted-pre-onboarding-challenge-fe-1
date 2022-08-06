@@ -30,5 +30,6 @@ declare module "styled-components" {
     };
     borderRadius: string;
     heading: string;
+    todosLength: string;
   }
 }
