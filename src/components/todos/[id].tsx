@@ -1,6 +1,15 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import useTodo from "../../hooks/useTodo";
+import datejs from "../../lib/dayjs";
+import LoadingSpinner from "../LoadingSpinner";
+import {
+  TodoContainer,
+  TodoContent,
+  TodoDate,
+  TodoHeader,
+  TodoTitle,
+} from "../style/todos/todo";
 
 interface ITodoProps {}
 
@@ -8,17 +17,23 @@ const Todo: React.FunctionComponent<ITodoProps> = (props) => {
   let { id } = useParams();
   let todoID: string = String(id);
 
-  const { isLoading, isError, data } = useTodo(todoID);
+  const { isLoading, data: todoData } = useTodo(todoID);
 
-  if (!isLoading) {
-    console.log(data);
+  if (isLoading) {
+    return <LoadingSpinner />;
   }
 
-  if (isError) {
-    console.log(isError);
-  }
-
-  return <></>;
+  return (
+    <TodoContainer>
+      <TodoHeader>
+        <TodoTitle>
+          <h2>{todoData?.data.title}</h2>
+        </TodoTitle>
+        <TodoDate>{datejs(String(todoData?.data.updatedAt))}</TodoDate>
+      </TodoHeader>
+      <TodoContent>{todoData?.data.content}</TodoContent>
+    </TodoContainer>
+  );
 };
 
 export default Todo;

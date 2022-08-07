@@ -28,6 +28,7 @@ declare module "styled-components" {
       tabPort: string;
       tabLand: string;
     };
+    linearGradient: string;
     borderRadius: string;
     heading: string;
     todosLength: string;

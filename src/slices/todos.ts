@@ -5,12 +5,23 @@ export interface Todo {
   content: string;
 }
 
-const initialState: Todo[] = [];
+const initialState: Todo = {
+  title: "",
+  content: "",
+};
 
 const todosSlice = createSlice({
-  name: "todos",
+  name: "todo",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setTitle(state, action) {
+      state.title = action.payload;
+    },
+    setContent(state, action) {
+      state.content = action.payload;
+    },
+  },
 });
 
+export const { setTitle, setContent } = todosSlice.actions;
 export default todosSlice.reducer;

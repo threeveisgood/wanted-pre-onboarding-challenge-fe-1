@@ -27,6 +27,8 @@ export const theme: DefaultTheme = {
     tabPort: "@media only screen and (max-width: 768px)",
     tabLand: "@media only screen and (max-width: 1080px)",
   },
+  linearGradient:
+    "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
   borderRadius: "0.4rem",
   heading: "3.2rem",
   todosLength: "70rem",

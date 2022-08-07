@@ -7,7 +7,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  background: ${(props) => props.theme.black};
+  background: ${(props) => props.theme.linearGradient};
   color: #fff;
 
   padding: 1.1rem 1.6rem;

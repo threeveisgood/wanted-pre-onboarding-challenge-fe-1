@@ -1,31 +1,27 @@
-import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
-import { todos } from "../../api/todos";
 import useTodos from "../../hooks/useTodos";
 import LoadingSpinner from "../LoadingSpinner";
-import { ListContainer, ListHeader } from "../style/todos/List";
+import { ListContainer, ListHeader, ListItemList } from "../style/todos/List";
 import ListItem from "./ListItem";
 
 interface IListProps {}
 
 const List: React.FunctionComponent<IListProps> = (props) => {
-  const { isLoading, data } = useTodos();
+  const { isLoading, data: todosData } = useTodos();
 
   if (isLoading) {
     return <LoadingSpinner />;
   }
 
-  console.log({ data, isLoading });
-
   return (
     <>
       <ListContainer>
         <ListHeader>
-          <h2>Todo List</h2>
+          <h3>목록</h3>
         </ListHeader>
-        <>
-          {data &&
-            data.data.map((data: any) => {
+        <ListItemList>
+          {todosData &&
+            todosData.data.map((data: any) => {
               return (
                 <ListItem
                   title={data.title}
@@ -36,7 +32,7 @@ const List: React.FunctionComponent<IListProps> = (props) => {
                 />
               );
             })}
-        </>
+        </ListItemList>
       </ListContainer>
     </>
   );

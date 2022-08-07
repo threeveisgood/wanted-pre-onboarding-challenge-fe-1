@@ -24,10 +24,8 @@ const GlobalStyle = createGlobalStyle`
         }        
     }
 
-    a {
-        //display: inline-block;
-        text-decoration: none;
-        position: relative;
+    a {        
+        text-decoration: none;        
         transition: ${({ theme }) => theme.transition.normal};
     }
 
@@ -47,10 +45,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0 0 1rem;
         font-weight: bold;        
         line-height: 1.1;
-    }
-
-    p {
-        margin: 0 0 1.1rem;
     }
 `;
 

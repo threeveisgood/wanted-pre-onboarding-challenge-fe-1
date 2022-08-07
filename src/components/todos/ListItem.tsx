@@ -1,5 +1,14 @@
 import * as React from "react";
-import { ItemContainer } from "../style/todos/Item";
+import { Link } from "react-router-dom";
+import { RouterLink } from "../style/common/Link";
+import {
+  ItemContainer,
+  ItemP,
+  ItemDelete,
+  ItemReWrite,
+} from "../style/todos/ListItem";
+import { MdOutlineDelete } from "react-icons/md";
+import { BsPencilSquare } from "react-icons/bs";
 
 interface IItemProps {
   title: string;
@@ -17,11 +26,21 @@ const ListItem: React.FunctionComponent<IItemProps> = ({
   updatedAt,
 }: IItemProps) => {
   return (
-    <>
-      <ItemContainer>
-        <h3>{title}</h3>
-      </ItemContainer>
-    </>
+    <ItemContainer key={id}>
+      <div>
+        <RouterLink to={id}>
+          <ItemP>{title}</ItemP>
+        </RouterLink>
+      </div>
+      <div>
+        <ItemReWrite>
+          <BsPencilSquare />
+        </ItemReWrite>
+        <ItemDelete>
+          <MdOutlineDelete />
+        </ItemDelete>
+      </div>
+    </ItemContainer>
   );
 };
 

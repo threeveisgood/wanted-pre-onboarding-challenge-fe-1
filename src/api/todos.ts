@@ -1,8 +1,8 @@
-import { Todo } from "../types/todos";
+import { TodoData } from "../types/todos";
 import client from "./client";
 
 interface Todos {
-  data: Todo[];
+  data: TodoData[];
   isLoading: boolean;
 }
 

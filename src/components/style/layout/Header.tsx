@@ -5,13 +5,13 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 6rem;
+  min-height: 6rem;
   top: 0;
   z-index: 11;
   padding: 0 5rem;
   transition: ${({ theme }) => theme.transition.normal};
   pointer-events: auto;
-  background: ${({ theme }) => theme.black};
+  background: ${({ theme }) => theme.linearGradient};
 
   ${({ theme }) => theme.media.tabPort} {
     padding: 0 2.5rem;
