@@ -8,11 +8,14 @@ export const TodoContainer = styled.div`
   width: ${({ theme }) => theme.todosLength};
   margin-bottom: 4rem;
   border-radius: 1rem;
+  background: ${({ theme }) => theme.linearGradient};
 `;
 export const TodoHeader = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
+
+  color: ${({ theme }) => theme.white};
 `;
 
 export const TodoTitle = styled.div`
@@ -30,5 +33,9 @@ export const TodoDate = styled.div`
 
 export const TodoContent = styled.div`
   display: flex;
-  padding: 2rem;
+  padding: 3rem 3rem;
+
+  margin: 3rem 0;
+  background-color: ${({ theme }) => theme.beige};
+  border-radius: 1rem;
 `;

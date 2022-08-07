@@ -31,7 +31,9 @@ const Todo: React.FunctionComponent<ITodoProps> = (props) => {
         </TodoTitle>
         <TodoDate>{datejs(String(todoData?.data.updatedAt))}</TodoDate>
       </TodoHeader>
-      <TodoContent>{todoData?.data.content}</TodoContent>
+      <TodoContent
+        dangerouslySetInnerHTML={{ __html: String(todoData?.data.content) }}
+      />
     </TodoContainer>
   );
 };

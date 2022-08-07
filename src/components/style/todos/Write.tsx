@@ -22,7 +22,7 @@ export const QuillWrapper = styled.div`
   margin-top: 3rem;
   .ql-editor {
     padding: 0;
-    min-height: 250px;
+    min-height: 220px;
     font-size: 1.125;
     line-height: 1.5;
   }

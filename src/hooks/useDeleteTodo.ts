@@ -1,17 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
-import { createTodo } from "../api/createTodo";
-import { reset } from "../slices/todos";
+import { deleteTodo } from "../api/deleteTodo";
 
-export default function useCreateTodo() {
+export default function useDeleteTodo(id: string) {
   const queryClient = useQueryClient();
-  const dispatch = useDispatch();
-
-  const mutation = useMutation(createTodo, {
+  const mutation = useMutation(() => deleteTodo(id), {
     onSuccess: (data) => {
       console.log(data);
 
-      dispatch(reset());
       queryClient.invalidateQueries(["todos"]);
     },
     onError: (error) => {

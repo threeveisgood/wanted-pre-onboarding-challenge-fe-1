@@ -35,7 +35,7 @@ const Header: React.FunctionComponent = () => {
       <HeaderContainer>
         <Nav>
           <Logo>
-            <StyledLink to="/">TODO</StyledLink>
+            <StyledLink to="/todos">TODO</StyledLink>
           </Logo>
           <Links>
             <LinksOl>

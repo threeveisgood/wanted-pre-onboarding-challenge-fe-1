@@ -9,10 +9,10 @@ export const ItemContainer = styled.li`
   margin-bottom: 0.8rem;
 
   &:nth-child(even) {
-    background: #d4ffde;
+    background: ${({ theme }) => theme.green};
   }
   &:nth-child(odd) {
-    background: #f9ffe3;
+    background: ${({ theme }) => theme.beige};
   }
 `;
 

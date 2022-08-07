@@ -1,13 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
-import { createTodo } from "../api/createTodo";
+import { rewriteTodo } from "../api/rewriteTodo";
 import { reset } from "../slices/todos";
 
-export default function useCreateTodo() {
+export default function useRewriteTodo() {
   const queryClient = useQueryClient();
   const dispatch = useDispatch();
 
-  const mutation = useMutation(createTodo, {
+  const mutation = useMutation(rewriteTodo, {
     onSuccess: (data) => {
       console.log(data);
 

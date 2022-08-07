@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import { RouterLink } from "../style/common/Link";
 import {
   ItemContainer,
@@ -9,6 +8,9 @@ import {
 } from "../style/todos/ListItem";
 import { MdOutlineDelete } from "react-icons/md";
 import { BsPencilSquare } from "react-icons/bs";
+import useDeleteTodo from "../../hooks/useDeleteTodo";
+import { useDispatch } from "react-redux";
+import { setOriginalContent } from "../../slices/todos";
 
 interface IItemProps {
   title: string;
@@ -22,9 +24,20 @@ const ListItem: React.FunctionComponent<IItemProps> = ({
   title,
   content,
   id,
-  createdAt,
-  updatedAt,
 }: IItemProps) => {
+  const dispatch = useDispatch();
+  const { mutate } = useDeleteTodo(id);
+
+  const onEdit = async () => {
+    await dispatch(
+      setOriginalContent({
+        title: title,
+        content: content,
+        originalId: id,
+      })
+    );
+  };
+
   return (
     <ItemContainer key={id}>
       <div>
@@ -33,10 +46,10 @@ const ListItem: React.FunctionComponent<IItemProps> = ({
         </RouterLink>
       </div>
       <div>
-        <ItemReWrite>
+        <ItemReWrite onClick={() => onEdit()}>
           <BsPencilSquare />
         </ItemReWrite>
-        <ItemDelete>
+        <ItemDelete onClick={() => mutate()}>
           <MdOutlineDelete />
         </ItemDelete>
       </div>
