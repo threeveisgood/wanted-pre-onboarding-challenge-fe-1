@@ -4,7 +4,7 @@ export const TodoContainer = styled.div`
   display: flex;
   padding: 2rem 4rem;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
+  box-shadow: ${({ theme }) => theme.boxShadow};
   width: ${({ theme }) => theme.todosLength};
   margin-bottom: 4rem;
   border-radius: 1rem;

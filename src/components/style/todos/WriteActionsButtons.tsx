@@ -10,4 +10,13 @@ export const WabContainer = styled.div`
 export const WabButton = styled(Button)`
   font-size: 1.3rem;
   padding: 1rem 1.4rem;
+  color: ${({ theme }) => theme.black};
+  font-weight: bold;
+
+  &:nth-child(even) {
+    background: ${({ theme }) => theme.green};
+  }
+  &:nth-child(odd) {
+    background: ${({ theme }) => theme.beige};
+  }
 `;

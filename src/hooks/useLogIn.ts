@@ -11,7 +11,7 @@ export default function useLogin() {
     onSuccess: (data) => {
       console.log(data);
 
-      navigate("/");
+      navigate("/todos");
       applyToken(data.token);
       window.location.reload();
     },

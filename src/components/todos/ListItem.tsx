@@ -16,8 +16,8 @@ interface IItemProps {
   title: string;
   content: string;
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 const ListItem: React.FunctionComponent<IItemProps> = ({

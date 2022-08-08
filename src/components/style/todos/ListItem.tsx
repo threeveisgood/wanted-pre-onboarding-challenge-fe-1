@@ -18,7 +18,6 @@ export const ItemContainer = styled.li`
 
 export const ItemP = styled.p`
   font-size: ${({ theme }) => theme.fontSize.lg};
-  //color: ${(props) => props.theme.black};
 `;
 
 export const ItemReWrite = styled.span`

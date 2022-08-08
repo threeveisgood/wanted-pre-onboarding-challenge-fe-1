@@ -13,6 +13,7 @@ export default function useRewriteTodo() {
 
       dispatch(reset());
       queryClient.invalidateQueries(["todos"]);
+      queryClient.invalidateQueries(["todo"]);
     },
     onError: (error) => {
       console.log(error);

@@ -32,4 +32,5 @@ export const theme: DefaultTheme = {
   borderRadius: "0.4rem",
   heading: "3.2rem",
   todosLength: "70rem",
+  boxShadow: "rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem",
 };

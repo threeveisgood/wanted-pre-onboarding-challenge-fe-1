@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem 4rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
+  padding: 3rem 4rem;
+  box-shadow: ${({ theme }) => theme.boxShadow};
   margin-bottom: 6rem;
   width: ${({ theme }) => theme.todosLength};
   border-radius: 1rem;
