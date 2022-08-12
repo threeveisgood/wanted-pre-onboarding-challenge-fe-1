@@ -1,1 +1,1 @@
-export const token: any = localStorage.getItem("token");
+export const token: string = localStorage.getItem("token") || "";
