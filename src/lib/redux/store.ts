@@ -6,13 +6,14 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
+  WebStorage,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/lib/persistReducer";
 import rootReducer from "../../slices";
 import persistStore from "redux-persist/lib/persistStore";
 
-const persistConfig: any = {
+const persistConfig: { key: string; version: number; storage: WebStorage } = {
   key: "root",
   version: 1,
   storage,
