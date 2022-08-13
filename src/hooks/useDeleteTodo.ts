@@ -16,6 +16,7 @@ export default function useDeleteTodo(id: string) {
     },
     onError: (error) => {
       console.log(error);
+      alert("에러가 발생하였습니다.: " + error);
     },
   });
   return mutation;
