@@ -11,7 +11,9 @@ const Layout: React.FunctionComponent<ILayoutProps> = ({ children }) => {
     <>
       <MainContainer>
         <Header />
-        <Container>{children}</Container>
+        <main>
+          <Container>{children}</Container>
+        </main>
       </MainContainer>
     </>
   );

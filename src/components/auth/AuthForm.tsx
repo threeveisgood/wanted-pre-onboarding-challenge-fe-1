@@ -17,8 +17,8 @@ import {
 interface IAuthFormProps {}
 
 const AuthForm: React.FunctionComponent<IAuthFormProps> = () => {
-  const [errorMessage, setErrorMessage] = useState<string | null>("");
-  const [isLogin, setIsLogin] = useState<boolean | null>(true);
+  const [errorMessage] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
 
   const { mutate: login, isLoading: loginLoading } = useLogin();
   const { mutate: regiseter, isLoading: registerLoading } = useRegister();
@@ -70,7 +70,7 @@ const AuthForm: React.FunctionComponent<IAuthFormProps> = () => {
               value={formik.values.email}
               onChange={formik.handleChange}
             />
-            <StyledLabel htmlFor="emial">이메일</StyledLabel>
+            <StyledLabel htmlFor="email">이메일</StyledLabel>
           </Field>
           {formik.touched.email && formik.errors.email ? (
             <FieldError>{formik.errors.email}</FieldError>

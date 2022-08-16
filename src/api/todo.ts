@@ -1,12 +1,8 @@
-import { TodoData } from "../types/todos";
+import { Todo } from "../types/todos";
 import client from "./client";
 
-interface Todo {
-  data: TodoData;
-  isLoading: boolean;
-}
-
-export async function todo(id: string) {
-  const { data } = await client.get<Todo>(`/todos/${id}`);
-  return data;
+export async function todo(id: string | undefined) {
+  return typeof id === "undefined"
+    ? Promise.reject(new Error("Invalid id"))
+    : client.get<Todo>(`/todos/${id}`).then((res) => res.data);
 }

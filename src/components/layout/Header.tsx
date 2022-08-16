@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { clearToken } from "../../api/client";
-import { token } from "../../lib/token";
+import { useAuth } from "../../hooks/state/useAuth";
 import {
   HeaderContainer,
   Links,
@@ -15,20 +12,7 @@ import {
 } from "../style/layout/Header";
 
 const Header: React.FunctionComponent = () => {
-  let navigate = useNavigate();
-  const [isLogin] = useState<boolean | null>(!!token);
-
-  const onLogout = () => {
-    clearToken();
-    return window.location.reload();
-  };
-
-  useEffect(() => {
-    if (!isLogin) {
-      alert("로그인 해주시기 바랍니다!");
-      navigate("/auth");
-    }
-  }, []);
+  let { isAuth, onLogout } = useAuth();
 
   return (
     <>
@@ -40,7 +24,7 @@ const Header: React.FunctionComponent = () => {
           <Links>
             <LinksOl>
               <LinksLi>
-                {isLogin ? (
+                {isAuth ? (
                   <LinksLogout onClick={onLogout}>로그아웃</LinksLogout>
                 ) : (
                   <LinksA to="/auth">로그인</LinksA>

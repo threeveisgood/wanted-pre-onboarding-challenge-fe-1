@@ -1,36 +1,23 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { QuillWrapper, WriteContainer, WriteTitle } from "../style/todos/Write";
 import ReactQuill from "react-quill";
 import { modules } from "../../lib/quill";
 import "react-quill/dist/quill.snow.css";
 import WriteActionButtons from "./WriteActionButtons";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../slices";
-import { setTitle, setContent } from "../../slices/todos";
+import useTodosState from "../../hooks/state/useTodosState";
+import useTodosStateActions from "../../hooks/state/useTodosStateActions";
 
 interface IWriteProps {}
 
 const Write: React.FunctionComponent<IWriteProps> = (props) => {
-  const dispatch = useDispatch();
-  const { title, content, originalId } = useSelector(
-    ({ todos }: RootState) => ({
-      title: todos.title,
-      content: todos.content,
-      originalId: todos.originalId,
-    })
-  );
+  const { title, content, originalId } = useTodosState();
+  const { setTitle, setContent } = useTodosStateActions();
   const [isOriginalId, setIsOriginalId] = useState<boolean>(false);
 
-  const handleChangeTitle = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) =>
-      dispatch(setTitle(e.target.value)),
-    [dispatch]
-  );
+  const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setTitle(e.target.value);
 
-  const handleChangeContent = useCallback(
-    (payload: any) => dispatch(setContent(payload)),
-    [dispatch]
-  );
+  const handleChangeContent = (payload: string) => setContent(payload);
 
   useEffect(() => {
     if (originalId !== "") {

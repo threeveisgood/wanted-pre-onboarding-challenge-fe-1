@@ -1,26 +1,17 @@
-import { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import useCreateTodo from "../../hooks/useCreateTodo";
 import useRewriteTodo from "../../hooks/useRewriteTodo";
-import { RootState } from "../../slices";
 import { WabButton, WabContainer } from "../style/todos/WriteActionsButtons";
-import { useDispatch } from "react-redux";
-import { reset } from "../../slices/todos";
+import useTodosState from "../../hooks/state/useTodosState";
+import useTodosStateActions from "../../hooks/state/useTodosStateActions";
 
 interface IWriteActionButtonsProps {}
 
 const WriteActionButtons: React.FunctionComponent<IWriteActionButtonsProps> = (
   props
 ) => {
-  const dispatch = useDispatch();
-  const { title, content, originalId } = useSelector(
-    ({ todos }: RootState) => ({
-      title: todos.title,
-      content: todos.content,
-      originalId: todos.originalId,
-    })
-  );
-
+  const { title, content, originalId } = useTodosState();
+  const { reset } = useTodosStateActions();
   const [isOriginalId, setIsOriginalId] = useState<boolean>(false);
 
   const { mutate: createMutate } = useCreateTodo();
@@ -34,7 +25,9 @@ const WriteActionButtons: React.FunctionComponent<IWriteActionButtonsProps> = (
     rewriteMutate({ title, content, id: originalId });
   };
 
-  const onReset = useCallback(() => dispatch(reset()), [dispatch]);
+  const onReset = () => {
+    reset();
+  };
 
   useEffect(() => {
     if (originalId !== "") {

@@ -1,21 +1,21 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
 import { createTodo } from "../api/createTodo";
-import { reset } from "../slices/todos";
+import useTodosStateActions from "./state/useTodosStateActions";
 
 export default function useCreateTodo() {
   const queryClient = useQueryClient();
-  const dispatch = useDispatch();
+  const { reset } = useTodosStateActions();
 
   const mutation = useMutation(createTodo, {
     onSuccess: (data) => {
       console.log(data);
 
-      dispatch(reset());
+      reset();
       queryClient.invalidateQueries(["todos"]);
     },
     onError: (error) => {
       console.log(error);
+      alert("에러가 발생하였습니다.: " + error);
     },
   });
   return mutation;

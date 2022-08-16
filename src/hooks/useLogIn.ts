@@ -18,6 +18,7 @@ export default function useLogin() {
     onError: (error: AuthError) => {
       console.log(error);
       console.log(error.response?.data);
+      alert("에러가 발생하였습니다.: " + error);
     },
   });
   return mutation;

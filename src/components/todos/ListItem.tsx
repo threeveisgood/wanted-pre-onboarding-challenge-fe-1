@@ -9,8 +9,7 @@ import {
 import { MdOutlineDelete } from "react-icons/md";
 import { BsPencilSquare } from "react-icons/bs";
 import useDeleteTodo from "../../hooks/useDeleteTodo";
-import { useDispatch } from "react-redux";
-import { setOriginalContent } from "../../slices/todos";
+import useTodosStateActions from "../../hooks/state/useTodosStateActions";
 
 interface IItemProps {
   title: string;
@@ -25,17 +24,15 @@ const ListItem: React.FunctionComponent<IItemProps> = ({
   content,
   id,
 }: IItemProps) => {
-  const dispatch = useDispatch();
   const { mutate } = useDeleteTodo(id);
+  const { setOriginalContent } = useTodosStateActions();
 
-  const onEdit = async () => {
-    await dispatch(
-      setOriginalContent({
-        title: title,
-        content: content,
-        originalId: id,
-      })
-    );
+  const onEdit = () => {
+    setOriginalContent({
+      title: title,
+      content: content,
+      originalId: id,
+    });
   };
 
   return (
@@ -46,7 +43,7 @@ const ListItem: React.FunctionComponent<IItemProps> = ({
         </RouterLink>
       </div>
       <div>
-        <ItemReWrite onClick={() => onEdit()}>
+        <ItemReWrite onClick={onEdit}>
           <BsPencilSquare />
         </ItemReWrite>
         <ItemDelete onClick={() => mutate()}>

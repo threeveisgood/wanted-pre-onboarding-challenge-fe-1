@@ -17,16 +17,16 @@ const todosSlice = createSlice({
   initialState: initialState,
   reducers: {
     reset: () => initialState,
-    setTitle(state, action) {
-      state.title = action.payload;
+    setTitle(state, { payload }) {
+      state.title = payload;
     },
-    setContent(state, action) {
-      state.content = action.payload;
+    setContent(state, { payload }) {
+      state.content = payload;
     },
-    setOriginalContent(state, action) {
-      state.title = action.payload.title;
-      state.content = action.payload.content;
-      state.originalId = action.payload.originalId;
+    setOriginalContent(state, { payload }) {
+      state.title = payload.title;
+      state.content = payload.content;
+      state.originalId = payload.originalId;
     },
   },
 });
