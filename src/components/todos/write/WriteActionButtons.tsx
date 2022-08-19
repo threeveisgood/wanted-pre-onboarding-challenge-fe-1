@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import useCreateTodo from "../../hooks/useCreateTodo";
-import useRewriteTodo from "../../hooks/useRewriteTodo";
-import { WabButton, WabContainer } from "../style/todos/WriteActionsButtons";
-import useTodosState from "../../hooks/state/useTodosState";
-import useTodosStateActions from "../../hooks/state/useTodosStateActions";
+import useCreateTodo from "../../../hooks/useCreateTodo";
+import useRewriteTodo from "../../../hooks/useRewriteTodo";
+import { WabButton, WabContainer } from "../../style/todos/WriteActionsButtons";
+import useTodosState from "../../../hooks/state/useTodosState";
+import useTodosStateActions from "../../../hooks/state/useTodosStateActions";
 import { useNavigate } from "react-router-dom";
 
 interface IWriteActionButtonsProps {}

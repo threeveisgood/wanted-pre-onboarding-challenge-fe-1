@@ -1,15 +1,15 @@
 import * as React from "react";
-import { RouterLink } from "../style/common/Link";
+import { RouterLink } from "../../style/common/Link";
 import {
   ItemContainer,
   ItemP,
   ItemDelete,
   ItemReWrite,
-} from "../style/todos/ListItem";
+} from "../../style/todos/ListItem";
 import { MdOutlineDelete } from "react-icons/md";
 import { BsPencilSquare } from "react-icons/bs";
-import useDeleteTodo from "../../hooks/useDeleteTodo";
-import useTodosStateActions from "../../hooks/state/useTodosStateActions";
+import useDeleteTodo from "../../../hooks/useDeleteTodo";
+import useTodosStateActions from "../../../hooks/state/useTodosStateActions";
 import { useNavigate } from "react-router-dom";
 
 interface IItemProps {

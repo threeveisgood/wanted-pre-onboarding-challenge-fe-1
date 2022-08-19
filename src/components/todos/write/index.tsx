@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
-import { QuillWrapper, WriteContainer, WriteTitle } from "../style/todos/Write";
+import {
+  QuillWrapper,
+  WriteContainer,
+  WriteTitle,
+} from "../../style/todos/Write";
 import ReactQuill from "react-quill";
-import { modules } from "../../lib/quill";
+import { modules } from "../../../lib/quill";
 import "react-quill/dist/quill.snow.css";
 import WriteActionButtons from "./WriteActionButtons";
-import useTodosState from "../../hooks/state/useTodosState";
-import useTodosStateActions from "../../hooks/state/useTodosStateActions";
+import useTodosState from "../../../hooks/state/useTodosState";
+import useTodosStateActions from "../../../hooks/state/useTodosStateActions";
 
 interface IWriteProps {}
 

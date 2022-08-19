@@ -1,7 +1,11 @@
 import * as React from "react";
-import useTodos from "../../hooks/useTodos";
-import LoadingSpinner from "../LoadingSpinner";
-import { ListContainer, ListHeader, ListItemList } from "../style/todos/List";
+import useTodos from "../../../hooks/useTodos";
+import LoadingSpinner from "../../LoadingSpinner";
+import {
+  ListContainer,
+  ListHeader,
+  ListItemList,
+} from "../../style/todos/List";
 import ListItem from "./ListItem";
 
 interface IListProps {}
