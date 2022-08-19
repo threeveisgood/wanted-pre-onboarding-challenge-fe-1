@@ -2,9 +2,9 @@
 
 ## 1) 프로젝트 비디오
 
-https://user-images.githubusercontent.com/41880220/185695111-876c2192-f914-40b5-81f1-6d35f0599f69.gif
+<img src="https://user-images.githubusercontent.com/41880220/185695111-876c2192-f914-40b5-81f1-6d35f0599f69.gif"/>
 
-https://user-images.githubusercontent.com/41880220/185695421-67b037bd-f80e-4b34-a099-b31fdfed4d8a.gif
+<img src="https://user-images.githubusercontent.com/41880220/185695421-67b037bd-f80e-4b34-a099-b31fdfed4d8a.gif"/>
 
 ## 2) 설치, 환경설정 및 실행방법
 
@@ -25,7 +25,7 @@ yarn start
 - [x] 이메일과 비밀번호 모두 입력과 조건 만족시 제출 활성화
 - [x] 응답으로 받은 토큰 로컬 스토리지 저장
 - [x] 로그인 시 토큰이 존재하면 루트 경로로 리다이렉트
-- [] 어떤 경우든 토큰이 유효하지 않다면 사용자에게 알리고 로그인 페이지로 리다이렉트
+- [ ] 어떤 경우든 토큰이 유효하지 않다면 사용자에게 알리고 로그인 페이지로 리다이렉트
 
 2. Todo List
 
