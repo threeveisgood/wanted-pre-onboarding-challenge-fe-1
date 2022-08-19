@@ -7,9 +7,10 @@ export async function rewriteTodo(params: {
   id: string;
 }) {
   const { title, content, id } = params;
-  const res = await client.put<TodoData>(`/todos/${id}`, {
+  const response = await client.put<TodoData>(`/todos/${id}`, {
     title,
     content,
   });
-  return res.data;
+
+  return response.data;
 }

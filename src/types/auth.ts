@@ -10,13 +10,12 @@ export interface AuthResult {
   token: string;
 }
 
-interface AuthErrorData {
+type AuthErrorData = {
   message: {
     id: string;
     message: string;
   }[];
-}
-[];
+}[];
 
 export type AuthError = AxiosError<{
   statusCode: number;

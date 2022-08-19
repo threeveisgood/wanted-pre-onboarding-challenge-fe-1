@@ -1,5 +1,6 @@
-import * as React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import useTodosStateActions from "../../hooks/state/useTodosStateActions";
 import useTodo from "../../hooks/useTodo";
 import datejs from "../../lib/dayjs";
 import LoadingSpinner from "../LoadingSpinner";
@@ -16,8 +17,13 @@ interface ITodoProps {}
 const Todo: React.FunctionComponent<ITodoProps> = (props) => {
   let { id } = useParams();
   let todoID: string = String(id);
+  const { setId } = useTodosStateActions();
 
   const { isLoading, data: todoData } = useTodo(todoID);
+
+  useEffect(() => {
+    setId(id);
+  }, [id]);
 
   if (isLoading) {
     return <LoadingSpinner />;

@@ -9,7 +9,9 @@ import {
 import { MdOutlineDelete } from "react-icons/md";
 import { BsPencilSquare } from "react-icons/bs";
 import useDeleteTodo from "../../hooks/useDeleteTodo";
+import useTodosState from "../../hooks/state/useTodosState";
 import useTodosStateActions from "../../hooks/state/useTodosStateActions";
+import { useNavigate } from "react-router-dom";
 
 interface IItemProps {
   title: string;
@@ -24,7 +26,9 @@ const ListItem: React.FunctionComponent<IItemProps> = ({
   content,
   id,
 }: IItemProps) => {
+  let navigate = useNavigate();
   const { mutate } = useDeleteTodo(id);
+  const { id: currentId } = useTodosState();
   const { setOriginalContent } = useTodosStateActions();
 
   const onEdit = () => {
@@ -46,7 +50,15 @@ const ListItem: React.FunctionComponent<IItemProps> = ({
         <ItemReWrite onClick={onEdit}>
           <BsPencilSquare />
         </ItemReWrite>
-        <ItemDelete onClick={() => mutate()}>
+        <ItemDelete
+          onClick={() =>
+            mutate(undefined, {
+              onSuccess: () => {
+                navigate("/todos");
+              },
+            })
+          }
+        >
           <MdOutlineDelete />
         </ItemDelete>
       </div>

@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api/auth";
 import { applyToken } from "../api/client";
@@ -9,16 +10,12 @@ export default function useLogin() {
 
   const mutation = useMutation(login, {
     onSuccess: (data) => {
-      console.log(data);
-
       navigate("/todos");
       applyToken(data.token);
       window.location.reload();
     },
     onError: (error: AuthError) => {
-      console.log(error);
-      console.log(error.response?.data);
-      alert("에러가 발생하였습니다.: " + error);
+      toast.error("에러가 발생하였습니다.: " + error);
     },
   });
   return mutation;

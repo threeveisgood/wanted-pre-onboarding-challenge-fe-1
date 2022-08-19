@@ -6,6 +6,7 @@ import {
   setTitle,
   setContent,
   setOriginalContent,
+  setId,
 } from "../../slices/todos";
 
 export default function useTodosStateActions() {
@@ -14,7 +15,7 @@ export default function useTodosStateActions() {
   return useMemo(
     () =>
       bindActionCreators(
-        { reset, setTitle, setContent, setOriginalContent },
+        { reset, setTitle, setContent, setOriginalContent, setId },
         dispatch
       ),
     [dispatch]

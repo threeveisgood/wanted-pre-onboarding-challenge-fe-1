@@ -1,5 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 import { createTodo } from "../api/createTodo";
+import { TodosError } from "../types/todos";
 import useTodosStateActions from "./state/useTodosStateActions";
 
 export default function useCreateTodo() {
@@ -7,15 +9,12 @@ export default function useCreateTodo() {
   const { reset } = useTodosStateActions();
 
   const mutation = useMutation(createTodo, {
-    onSuccess: (data) => {
-      console.log(data);
-
+    onSuccess: () => {
       reset();
-      queryClient.invalidateQueries(["todos"]);
+      return queryClient.invalidateQueries(["todos"]);
     },
-    onError: (error) => {
-      console.log(error);
-      alert("에러가 발생하였습니다.: " + error);
+    onError: (error: TodosError) => {
+      toast.error("에러가 발생하였습니다.: " + error.message);
     },
   });
   return mutation;
