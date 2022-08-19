@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
 export const FormSection = styled.section`
+  background-color: ${({ theme }) => theme.white};
+  border-radius: 3rem;
   margin-top: 6rem;
   padding: 10rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;

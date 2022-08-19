@@ -27,7 +27,7 @@ const WriteActionButtons: React.FunctionComponent<
     rewriteMutate(
       { title, content, id: originalId },
       {
-        onSuccess: () => navigate(`/todos/${originalId}`),
+        onSuccess: () => navigate(`/${originalId}`),
       }
     );
   };

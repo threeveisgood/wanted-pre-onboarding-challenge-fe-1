@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {        
+        background: ${({ theme }) => theme.backgroundGradient};
         line-height: 1.3;
         overflow-x: hidden;
         color: ${({ theme }) => theme.black};                

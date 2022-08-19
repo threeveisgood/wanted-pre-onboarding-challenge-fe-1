@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import GlobalStyle from "./styled/globalStyles";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./lib/redux/store";
-import Router from "./components/Router";
+import Router from "./routes/Router";
 import { AuthProvider } from "./hooks/state/useAuth";
 import { queryClient } from "./lib/tanstack/query-client";
 

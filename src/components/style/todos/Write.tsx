@@ -4,7 +4,7 @@ export const WriteContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 70rem;
-  padding: 4rem 5rem 2rem;
+  padding: 4rem 5rem 5rem;
 
   box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: 1rem;

@@ -19,7 +19,7 @@ const Header: React.FunctionComponent = () => {
       <HeaderContainer>
         <Nav>
           <Logo>
-            <StyledLink to="/todos">TODO</StyledLink>
+            <StyledLink to="/">TODO</StyledLink>
           </Logo>
           <Links>
             <LinksOl>

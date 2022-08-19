@@ -10,6 +10,7 @@ export const Button = styled.button`
   background: ${(props) => props.theme.linearGradient};
   color: #fff;
 
+  width: 100%;
   padding: 1.1rem 1.6rem;
   border-width: 0.1rem;
   border-radius: 0.2rem;

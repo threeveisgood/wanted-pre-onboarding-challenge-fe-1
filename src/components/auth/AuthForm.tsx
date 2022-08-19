@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useLogin from "../../hooks/useLogIn";
 import useRegister from "../../hooks/useRegister";
 import { registerValidationSchema } from "../../lib/yup";
@@ -17,6 +18,7 @@ import {
 interface IAuthFormProps {}
 
 const AuthForm: React.FunctionComponent<IAuthFormProps> = () => {
+  let navigate = useNavigate();
   const [errorMessage] = useState("");
   const [isLogin, setIsLogin] = useState(true);
 
@@ -44,10 +46,17 @@ const AuthForm: React.FunctionComponent<IAuthFormProps> = () => {
       }
 
       if (isLogin) {
-        login({
-          email: enteredEmail,
-          password: enteredPassword,
-        });
+        login(
+          {
+            email: enteredEmail,
+            password: enteredPassword,
+          },
+          {
+            onSuccess: () => {
+              navigate("/");
+            },
+          }
+        );
       } else {
         regiseter({
           email: enteredEmail,
@@ -69,6 +78,7 @@ const AuthForm: React.FunctionComponent<IAuthFormProps> = () => {
               placeholder="이메일"
               value={formik.values.email}
               onChange={formik.handleChange}
+              autoComplete="off"
             />
             <StyledLabel htmlFor="email">이메일</StyledLabel>
           </Field>

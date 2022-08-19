@@ -1,4 +1,5 @@
 import * as React from "react";
+import Layout from "../layout";
 import AuthForm from "./AuthForm";
 
 interface IAuthProps {}
@@ -6,7 +7,9 @@ interface IAuthProps {}
 const Auth: React.FunctionComponent<IAuthProps> = (props) => {
   return (
     <>
-      <AuthForm />
+      <Layout>
+        <AuthForm />
+      </Layout>
     </>
   );
 };

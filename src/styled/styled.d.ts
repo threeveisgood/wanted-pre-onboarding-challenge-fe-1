@@ -29,6 +29,7 @@ declare module "styled-components" {
       tabLand: string;
     };
     linearGradient: string;
+    backgroundGradient: string;
     borderRadius: string;
     heading: string;
     todosLength: string;
