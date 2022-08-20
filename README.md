@@ -189,7 +189,7 @@ yarn start
 
 ## 과제 진행 시 주안점
 
-코드의 재사용성을 높이기 위해서 hooks 폴더에 모든 React-Query 관련 코드들을 분리하며
+코드의 재사용성을 높이기 위해서 hooks 폴더에 모든 react-query 관련 코드들을 분리하며
 
 hooks/state와 slices에는 리덕스 관련 코드들을 분리하면서 client와 server state를 확실히 구분해두고 싶었습니다.
 
@@ -197,8 +197,8 @@ hooks/state와 slices에는 리덕스 관련 코드들을 분리하면서 client
 
 ## 한계점 및 개선사항
 
--Error Handling 부분에서 매우 미숙해서 유연한 대처가 안되는 앱으로 생각됩니다.
+-error handling 부분에서 매우 미숙해서 유연한 대처가 안되는 앱으로 생각됩니다.
 
--Redux Router DOM을 잘못 다뤄서 다른 분들의 코드를 많이 참고하고 구현하였습니다.
+-redux router dom을 잘못 다뤄서 다른 분들의 코드를 많이 참고하고 구현하였습니다.
 
--그 과정에서 Layout 컴포넌틀르 전역으로 두는 것을 선호하는 편인데 layout을 여러 군데 호출하게 된 것이 아쉬웠습니다.
+-그 과정에서 layout 컴포넌틀르 전역으로 두는 것을 선호하는 편인데 layout을 여러 군데 호출하게 된 것이 아쉬웠습니다.
