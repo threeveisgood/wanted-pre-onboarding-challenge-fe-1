@@ -74,7 +74,7 @@ yarn start
 ## 폴더 구조 설명
 
 - components 폴더는 소규모 프로젝트 특성상 별도의 페이지 없이 index 파일로 간략화하면서 분리하였습니다.
-- style 폴더는 styled-components의 스타일 부분 코드만 모아두었습니다. 컴포넌트 경로와 비슷한 형태를 이루어
+- style 폴더는 styled-components의 스타일 부분 코드만 모아두었습니다. 컴포넌트 경로와 비슷한 형태를 이루어져 있습니다.
 - hooks 폴더는 기본적으로 react-query 관련 Hook들을 보관하며 State에는 리덕스 관련 상태를 모아두었습니다.
 - api 폴더에는 Axios 코드들을 모아놓았습니다.
 - lib 폴더에는 따로 폴더를 만들어 보관하기 애매한 파일들을 모아두었습니다. 그래도 redux와 react-query는 중요하기 때문에 별도의 폴더로 분리하였습니다.
