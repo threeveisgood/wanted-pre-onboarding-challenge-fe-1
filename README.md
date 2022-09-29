@@ -197,6 +197,6 @@ hooks/state와 slices에는 리덕스 관련 코드들을 분리하면서 client
 
 -error handling 부분에서 매우 미숙해서 유연한 대처가 안되는 앱으로 생각됩니다.
 
--redux router dom을 잘못 다뤄서 다른 분들의 코드를 많이 참고하고 구현하였습니다.
+-react router dom을 잘못 다뤄서 다른 분들의 코드를 많이 참고하고 구현하였습니다.
 
 -그 과정에서 layout 컴포넌틀르 전역으로 두는 것을 선호하는 편인데 layout을 여러 군데 호출하게 된 것이 아쉬웠습니다.
